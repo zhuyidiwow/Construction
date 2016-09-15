@@ -12,7 +12,8 @@ Current age of this game.
 1. Look at the plate on the ground.    
 2. Look at it, left click to start pouring concrete.    
 3. You will hear the sound of that engine.    
-4. You may want to jump onto the platform to see the pouring process more clearly.
+4. You may want to jump onto the platform to see the pouring process more clearly.    
+5. Left click to destroy any formwork component that you're looking at.
 
 ## Dark Age
 Planned to be released on 25 September.
