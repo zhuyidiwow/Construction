@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AggregateBehavior : MonoBehaviour {
 
@@ -10,9 +11,9 @@ public class AggregateBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameObject.transform.position.z < 5.5f || gameObject.transform.position.z > 7.5f
+        if (gameObject.transform.position.z < 5.5f || gameObject.transform.position.z > 7.5f
         || gameObject.transform.position.x < -0.2f || gameObject.transform.position.x > 1.9f) {
             Destroy(this.gameObject);
         }
-	}
+    }
 }

@@ -13,9 +13,11 @@ public class DestroyOnClick : MonoBehaviour {
 	
 	}
 
+#region MyClass definition
     void OnMouseOver() {
         if(Input.GetMouseButtonDown (0)) {
             Destroy (this.gameObject);
         }
     }
+    #endregion
 }
