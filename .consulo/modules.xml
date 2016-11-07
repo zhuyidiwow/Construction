@@ -4,7 +4,7 @@
     <modules>
       <module name="Construction" dirurl="file://$PROJECT_DIR$" current-layer="Default">
         <module-layer name="Default">
-          <extension id="unity3d" sdk-module-name="" sdk-name="Unity3D 5.4.0 (predefined)">
+          <extension id="unity3d" sdk-module-name="" sdk-name="Unity3D 5.4.1 (predefined)">
             <define>UNITY_EDITOR</define>
             <define>DEBUG</define>
             <define>TRACE</define>
@@ -186,7 +186,7 @@
           <orderEntry type="dot-net-library" name="System.Core" />
           <orderEntry type="dot-net-library" name="System.Xml" />
           <orderEntry type="dot-net-library" name="System.Xml.Linq" />
-          <orderEntry type="module-library">
+          <orderEntry type="module-library" exported="">
             <library>
               <binaries>
                 <root url="netdll://$USER_HOME$/Desktop/Unity/Construction/Assets/Editor/Plugins/UnityEditorConsuloPlugin5.3.dll!/" />
@@ -199,12 +199,8 @@
         <module-layer name="Default">
           <extension id="unity3d-child" />
           <extension id="unity3d-csharp-child" unsafe-code="false" language-version-module-name="" language-version-name="" />
-          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/AggregateBehavior.cs" />
-          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/ButtonBehavior.cs" />
-          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/CameraControl.cs" />
-          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/CameraControl.cs.meta" />
-          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/DestroyOnClick.cs" />
-          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/DestroyOnClick.cs.meta" />
+          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/FlyThrough.cs" />
+          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/GameManager.cs" />
           <orderEntry type="sourceFolder" />
           <orderEntry type="module" module-name="Assembly-UnityScript-firstpass" />
           <orderEntry type="module" module-name="Assembly-CSharp-firstpass" />
@@ -220,6 +216,13 @@
           <orderEntry type="dot-net-library" name="System.Core" />
           <orderEntry type="dot-net-library" name="System.Xml" />
           <orderEntry type="dot-net-library" name="System.Xml.Linq" />
+          <orderEntry type="module-library" exported="">
+            <library>
+              <binaries>
+                <root url="netdll://$USER_HOME$/Desktop/Unity/Construction/Assets/Editor/Plugins/UnityEditorConsuloPlugin5.3.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
         </module-layer>
       </module>
     </modules>

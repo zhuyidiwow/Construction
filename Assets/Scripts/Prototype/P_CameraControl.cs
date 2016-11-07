@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraControl : MonoBehaviour {
+public class P_CameraControl : MonoBehaviour {
 
 	private float moveSpeed = 3f;
 	// Use this for initialization

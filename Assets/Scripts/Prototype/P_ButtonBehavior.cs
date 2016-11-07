@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class ButtonBehavior : MonoBehaviour {
+public class P_ButtonBehavior : MonoBehaviour {
 
     public GameObject aggregate;
     public GameObject largeAggregate;

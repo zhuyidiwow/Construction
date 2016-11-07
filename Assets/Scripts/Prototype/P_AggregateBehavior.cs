@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AggregateBehavior : MonoBehaviour {
+public class P_AggregateBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
