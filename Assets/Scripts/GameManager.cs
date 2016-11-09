@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
     public BComponent[] components;
     public ProgressManager progressManager;
     public Text switchPhaseButtonText;
+    public GameObject switchButton;
 
     private bool inViewPhase = true;
 
@@ -15,9 +16,17 @@ public class GameManager : MonoBehaviour {
             inViewPhase = false;
         } else {
             progressManager.SwitchToView();
-            switchPhaseButtonText.text = "Back to View";
+            switchPhaseButtonText.text = "Back to Construction";
             inViewPhase = true;
         }
+    }
+
+    public void DisableSwitchButton() {
+        switchButton.SetActive(false);
+    }
+
+    public void EnableSwitchButton() {
+        switchButton.SetActive(true);
     }
 
 //    void Update() {

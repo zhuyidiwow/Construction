@@ -18,20 +18,33 @@ public class Weather{
         return str;
     }
 
+    // comments
+    public string GetWeatherComment() {
+        return specialWeather.GetSpecialWeatherComment();
+    }
+
     // calculation things
     public float GetWeatherModifier() {
-        return 1f;
+        float modifier = 1f;
+        modifier *= GetTemperatureModifier();
+        modifier *= GetHumidityModifier();
+        modifier *= GetSpecialModifier();
+        return modifier;
     }
 
     private float GetTemperatureModifier() {
-        return 1f;
+        float modifier = 1f;
+        modifier -= (temperature - 26f) * 0.01f;
+        return modifier;
     }
 
     private float GetHumidityModifier() {
-        return 1f;
+        float modifier = 1f;
+        modifier -= (humidity - 75f) * 0.01f;
+        return modifier;
     }
 
     private float GetSpecialModifier() {
-        return 1f;
+        return specialWeather.GetSpecialWeatherModifier();
     }
 }

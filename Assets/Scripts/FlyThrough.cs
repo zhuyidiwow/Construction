@@ -66,9 +66,9 @@ public class FlyThrough : MonoBehaviour {
 
     void UpdateText() {
         if (Cursor.visible) {
-            modeText.text = "Select mode";
+            modeText.text = "Select mode (Press M to switch mode)";
         } else {
-            modeText.text = "Fly mode";
+            modeText.text = "Fly mode (Press M to switch mode)";
         }
     }
 }

@@ -8,26 +8,27 @@
     <file path="/AggregateBehavior.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478530651168" ignored="false" />
     <file path="/DestroyOnClick.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478530695113" ignored="false" />
     <file path="/ToggleDisplay.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478530706205" ignored="false" />
-    <file path="/GameManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478676834201" ignored="false" />
+    <file path="/GameManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478680338241" ignored="false" />
     <file path="/UIValueField.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478530723989" ignored="false" />
     <file path="/CameraControl.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478530714680" ignored="false" />
     <file path="/FlyThrough.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478622726375" ignored="false" />
     <file path="/Component.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478590511039" ignored="false" />
     <file path="/HouseComponent.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478590228689" ignored="false" />
     <file path="/P_ButtonBehavior.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478587138391" ignored="false" />
-    <file path="/GetterUtility.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478614227515" ignored="false" />
+    <file path="/GetterUtility.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478680264765" ignored="false" />
     <file path="/ComponentInfoManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478607219021" ignored="false" />
     <file path="/ComponentInfo.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478608667157" ignored="false" />
     <file path="/MyComponent.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478604978308" ignored="false" />
-    <file path="/Day.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478675765647" ignored="false" />
-    <file path="/ProgressManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478676521477" ignored="false" />
-    <file path="/Weather.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478599429721" ignored="false" />
-    <file path="/SpecialWeather.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478675203401" ignored="false" />
+    <file path="/Day.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478694754756" ignored="false" />
+    <file path="/ProgressManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478694090656" ignored="false" />
+    <file path="/Weather.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478690654342" ignored="false" />
+    <file path="/SpecialWeather.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478691529149" ignored="false" />
     <file path="/BComponent.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478614252764" ignored="false" />
     <file path="/ButtonChangeDay.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478606765250" ignored="false" />
     <file path="/UIDayNumber.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478609425126" ignored="false" />
     <file path="/SwitchScene.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478675014160" ignored="false" />
     <file path="/SpecialWeatherCondition.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478675189526" ignored="false" />
+    <file path="/ModifierManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478678720608" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +53,11 @@
       <file leaf-file-name="ProgressManager.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="169" column="27" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
+            <state relative-caret-position="5899">
+              <caret line="779" column="39" selection-start-line="779" selection-start-column="39" selection-end-line="779" selection-end-column="39" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
+                <element signature="n#!!block;n#InitializeDays#0;n#ProgressManager#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -65,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -73,33 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SwitchScene.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SwitchScene.cs">
+      <file leaf-file-name="ModifierManager.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ModifierManager.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpecialWeatherCondition.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeatherCondition.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="64" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpecialWeather.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,18 +88,18 @@
       <file leaf-file-name="Weather.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="374">
+              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetterUtility.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GetterUtility.cs">
+      <file leaf-file-name="SpecialWeather.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="1054">
+              <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -128,8 +108,8 @@
       <file leaf-file-name="Day.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="42" column="73" selection-start-line="42" selection-start-column="73" selection-end-line="42" selection-end-column="73" />
+            <state relative-caret-position="289">
+              <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -150,6 +130,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetterUtility.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GetterUtility.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -185,18 +175,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ButtonChangeDay.cs" />
         <option value="$PROJECT_DIR$/Assets/Day.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIDayNumber.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs" />
         <option value="$PROJECT_DIR$/Assets/ComponentInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GetterUtility.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FlyThrough.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ComponentInfoManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ProgressManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Progress/SwitchScene.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeatherCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Progress/ModifierManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GetterUtility.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs" />
       </list>
     </option>
@@ -248,6 +239,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -322,7 +314,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -428,11 +419,14 @@
       <workItem from="1478616934355" duration="298000" />
       <workItem from="1478617501918" duration="4674000" />
       <workItem from="1478674085318" duration="2236000" />
+      <workItem from="1478677233427" duration="6865000" />
+      <workItem from="1478686101974" duration="7588000" />
+      <workItem from="1478699164776" duration="130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37980000" />
+    <option name="totallyTimeSpent" value="52563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -523,17 +517,133 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ModifierManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2873">
+          <caret line="169" column="27" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="n#!!block;n#InitializeDays#0;n#ProgressManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SwitchScene.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeatherCondition.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="64" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GetterUtility.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="73" selection-start-line="42" selection-start-column="73" selection-end-line="42" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ComponentInfoManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/BComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/FlyThrough.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -541,9 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -551,9 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -563,6 +667,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+            <element signature="n#!!block;n#InitializeDays#0;n#ProgressManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -602,9 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -614,6 +716,7 @@
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+            <element signature="n#!!block;n#InitializeDays#0;n#ProgressManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -653,9 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -733,16 +833,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeatherCondition.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="64" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SwitchScene.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GetterUtility.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="5899">
+          <caret line="779" column="39" selection-start-line="779" selection-start-column="39" selection-end-line="779" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="n#!!block;n#InitializeDays#0;n#ProgressManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ModifierManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -763,64 +919,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeatherCondition.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="64" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SwitchScene.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GetterUtility.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="169" column="27" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="42" column="73" selection-start-line="42" selection-start-column="73" selection-end-line="42" selection-end-column="73" />
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
       </provider>

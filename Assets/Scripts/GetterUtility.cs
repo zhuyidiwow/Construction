@@ -9,6 +9,17 @@ public class GetterUtility : MonoBehaviour{
         return yellowMat;
     }
 
+    public static GameManager GetGameManager() {
+        GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if (gameManager != null) {
+            return gameManager;
+        }
+        else {
+            Debug.Log("GameManager not found");
+            return null;
+        }
+    }
+
     public static ComponentInfoManager GetComponentInfoManager() {
         componentInfoManager = GameObject.Find("ComponentInfoManager").GetComponent<ComponentInfoManager>();
         if (componentInfoManager != null) {

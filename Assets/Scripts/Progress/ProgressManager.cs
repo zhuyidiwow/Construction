@@ -1,25 +1,47 @@
 ﻿using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ProgressManager : MonoBehaviour {
+    private GameManager gameManager;
+
+    public GameObject hudCanvas;
+    public GameObject winCanvas;
+    public Text winText;
+    public GameObject loseCanvas;
+    public Text loseText;
 
     public Day[] days;
     public BComponent[] components;
+    public GameObject dayInfo;
     public Text dayInfoText;
 
+    // view UI
     public Slider slider;
     public GameObject dayNumberText;
     public GameObject changeDayButton;
 
+    // plan UI
+    public GameObject skilledLaborInput;
+    public GameObject generalLaborInput;
+    public GameObject startDayButton;
+    public GameObject endDayButton;
+    public GameObject nextDayButton;
+    public GameObject endDayInfo;
+    public Text endDayInfoText;
+
     public int displayedDay;
     public int actualDay;
-    public int dayForTrackProgress;
+    public int progressDay;
 
     public float interval;
+    public ModifierManager modifierManager;
 
     public ArrayList componentsIn;
     public ArrayList componentsOut;
+
+    private float sumExpectedIndicator = 0f;
 
 	void Start () {
         InitializeDays();
@@ -27,54 +49,150 @@ public class ProgressManager : MonoBehaviour {
         UpdateTextWithDisplay();
         UpdateComponentWithDisplay();
         actualDay = 1;
-        dayForTrackProgress = 1;
-    }
+        progressDay = 1;
+        gameManager = GetterUtility.GetGameManager();
+        modifierManager = new ModifierManager();
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.O)) {
-            dayForTrackProgress++;
-            UpdateDayWithDayForTrackProgress();
-        }
-        if (Input.GetKeyDown(KeyCode.P)) {
-            dayForTrackProgress--;
-            UpdateDayWithDayForTrackProgress();
+        skilledLaborInput.SetActive(false);
+        generalLaborInput.SetActive(false);
+        startDayButton.SetActive(false);
+        endDayButton.SetActive(false);
+        nextDayButton.SetActive(false);
+        endDayInfo.SetActive(false);
+
+        winCanvas.SetActive(false);
+        loseCanvas.SetActive(false);
+
+
+
+        for (int i = 0; i <= 16; i++) {
+            days[i].Calculation();
+            sumExpectedIndicator += days[i].GetExpectedProgressIndicator();
+
         }
 
-        if (Input.GetKeyDown(KeyCode.Z)) {
-            SwitchToView();
-        }
-
-        if (Input.GetKeyDown(KeyCode.X)) {
-            SwitchToPlan();
-        }
+        // for calculating expected progress
+//        float testSub = 0;
+//        for (int i = 0; i <= 16; i++) {
+//            int a = i + 1;
+//            testSub += days[i].GetExpectedProgressIndicator();
+//            float percent = testSub / sumExpectedIndicator;
+//            percent *= 100f;
+//            Debug.Log("Day " + a + ": " + percent);
+//        }
     }
 
     public void SwitchToView() {
         UpdateDayWithSlider();
         dayNumberText.SetActive(true);
+
+        skilledLaborInput.SetActive(false);
+        generalLaborInput.SetActive(false);
+        startDayButton.SetActive(false);
     }
 
     public void SwitchToPlan() {
-        UpdateDayWithDayForTrackProgress();
+        UpdateDayWithProgressDay();
         slider.gameObject.SetActive(false);
         dayNumberText.SetActive(false);
         changeDayButton.SetActive(false);
+        endDayButton.SetActive(false);
+
+        skilledLaborInput.SetActive(true);
+        generalLaborInput.SetActive(true);
+        startDayButton.SetActive(true);
     }
 
-    public void UpdateDayForTrackProgress(int newDayForTrackProgress) {
-        dayForTrackProgress = newDayForTrackProgress;
+    public void ChangeProgressDay(int newProgressDay) {
+        progressDay = newProgressDay;
     }
 
-    public void UpdateDayWithDayForTrackProgress() {
-        UpdateTextWithDayForTrackProgress();
-        UpdateComponentWithDayForTrackProgress();
+    public void StartDay() {
+        // disable view UIs
+        gameManager.DisableSwitchButton();
+
+        // receive inputs
+        days[actualDay - 1].actualSkilledLabor =
+            System.Convert.ToInt32(skilledLaborInput.GetComponent<InputField>().text);
+
+        days[actualDay - 1].actualGeneralLabor =
+            System.Convert.ToInt32(generalLaborInput.GetComponent<InputField>().text);
+
+        // do the calculation
+        days[actualDay - 1].Calculation();
+
+        float sumActualIndicator = 0f;
+        for (int i = 0; i <= actualDay - 1; i++) {
+            sumActualIndicator += days[i].GetActualProgressIndicator();
+        }
+
+        float actualProgress = 100f * sumActualIndicator / sumExpectedIndicator;
+        days[actualDay - 1].actualProgress = actualProgress;
+
+        // get progress day
+        for (int i = 16; i >= 0; i--) {
+            if (actualProgress >= days[i].expectedProgress) {
+                progressDay = i + 1;
+                break;
+            }
+        }
+//        Debug.Log("sumExpectedIndicator: " + sumExpectedIndicator);
+//        Debug.Log("sumActualIndicator: " + sumActualIndicator);
+//        Debug.Log("actualProgress: " + actualProgress);
+//        Debug.Log("progressDay: " + progressDay);
+
+        // do the animation
+        UpdateComponentWithProgressDay();
     }
 
-    void UpdateTextWithDayForTrackProgress() {
-        dayInfoText.text = days[dayForTrackProgress - 1].ToString();
+    public void EndDay() {
+        dayInfo.SetActive(false);
+
+        // show the board, include suggestions
+        endDayInfo.SetActive(true);
+        endDayInfoText.text = days[actualDay - 1].GetEndOfDayString();
+
+        // show NexDay Button
+        endDayButton.SetActive(false);
+        nextDayButton.SetActive(true);
+
     }
 
-    void UpdateComponentWithDayForTrackProgress() {
+    public void NextDay() {
+        if (progressDay >= 17) {
+            Win();
+        } else if (actualDay >= 30) {
+            Lose();
+        }
+        // go to next day
+        actualDay++;
+        UpdateTextWithActualDay();
+
+        endDayInfo.SetActive(false);
+        nextDayButton.SetActive(false);
+
+        dayInfo.SetActive(true);
+
+        skilledLaborInput.SetActive(true);
+        generalLaborInput.SetActive(true);
+        startDayButton.SetActive(true);
+
+        gameManager.EnableSwitchButton();
+
+    }
+
+
+    #region progress
+    public void UpdateDayWithProgressDay() {
+        UpdateTextWithActualDay();
+        UpdateComponentWithProgressDay();
+    }
+
+    void UpdateTextWithActualDay() {
+        dayInfoText.text = days[actualDay - 1].ToString();
+    }
+
+    void UpdateComponentWithProgressDay() {
         // refresh array lists
         componentsIn = new ArrayList();
         componentsOut = new ArrayList();
@@ -82,27 +200,47 @@ public class ProgressManager : MonoBehaviour {
         foreach (BComponent component in components) {
             // add those who are not active but (displayedDay >= dayIn)
             if (
-            dayForTrackProgress >= component.componentInfo.scheduledDayIn
+            progressDay >= component.componentInfo.scheduledDayIn
             && !component.gameObject.activeSelf
-            && dayForTrackProgress < component.componentInfo.scheduledDayOut
+            && progressDay < component.componentInfo.scheduledDayOut
             ) {
 
                 componentsIn.Add(component);
             }
 
             // remove those who are active but (displayedDay >= dayOut
-            if (dayForTrackProgress >= component.componentInfo.scheduledDayOut && component.gameObject.activeSelf) {
+            if (progressDay >= component.componentInfo.scheduledDayOut && component.gameObject.activeSelf) {
                 componentsOut.Add(component);
             }
 
             // remove those who should not exist, used when rewind
-            if (dayForTrackProgress < component.componentInfo.scheduledDayIn && component.gameObject.activeSelf) {
+            if (progressDay < component.componentInfo.scheduledDayIn && component.gameObject.activeSelf) {
                 componentsOut.Add(component);
             }
         }
 
-        StartCoroutine(ComponentsAnimationCoroutine());
+        StartCoroutine(ComponentsAnimationCoroutineForProgress());
     }
+
+    IEnumerator ComponentsAnimationCoroutineForProgress() {
+        skilledLaborInput.SetActive(false);
+        generalLaborInput.SetActive(false);
+        startDayButton.SetActive(false);
+
+        foreach (BComponent inComp in componentsIn) {
+            inComp.ComeIn();
+            yield return new WaitForSeconds(interval);
+        }
+
+        foreach (BComponent outComp in componentsOut) {
+            outComp.FlyOut();
+            yield return new WaitForSeconds(interval);
+        }
+
+        endDayButton.SetActive(true);
+        StopCoroutine("ComponentsAnimationCoroutineForProgress");
+    }
+#endregion
 
     IEnumerator ComponentsAnimationCoroutine() {
         slider.gameObject.SetActive(false);
@@ -179,10 +317,10 @@ public class ProgressManager : MonoBehaviour {
         Weather weather;
 
         #region day 1
-        expectedProgress = 10;
+        expectedProgress = 3.1f;
         activityOnThatDay = "Setting out for concrete walls, Prepare materials for formwork and rebars";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 4;
+        expectedSkilledLabor = 1;
+        expectedGeneralLabor = 2;
 
         conditions = new SpecialWeatherCondition[2];
         conditions[0] = SpecialWeatherCondition.Thunderstorm;
@@ -194,10 +332,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 2
-        expectedProgress = 15;
+        expectedProgress = 7.7f;
         activityOnThatDay = "Prepare materials for formwork and rebars, Formwork";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 4;
+        expectedSkilledLabor = 2;
+        expectedGeneralLabor = 2;
 
         conditions = new SpecialWeatherCondition[2];
         conditions[0] = SpecialWeatherCondition.Thunderstorm;
@@ -209,10 +347,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 3
-        expectedProgress = 20;
+        expectedProgress = 11.6f;
         activityOnThatDay = "Formwork";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 1;
+        expectedGeneralLabor = 2;
 
         conditions = null;
         specialWeather = new SpecialWeather(conditions);
@@ -222,10 +360,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 4
-        expectedProgress = 25;
+        expectedProgress = 17.1f;
         activityOnThatDay = "Formwork, Rebar fixing";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 2;
+        expectedGeneralLabor = 2;
 
         conditions = null;
         specialWeather = new SpecialWeather(conditions);
@@ -235,10 +373,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 5
-        expectedProgress = 30;
+        expectedProgress = 23.5f;
         activityOnThatDay = "Rebar fixing, Preparation of Gypsum Board & Painting";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 2;
+        expectedGeneralLabor = 3;
 
         conditions = new SpecialWeatherCondition[1];
         conditions[0] = SpecialWeatherCondition.Thunderstorm;
@@ -249,10 +387,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 6
-        expectedProgress = 35;
+        expectedProgress = 29.8f;
         activityOnThatDay = "Preparation of Gypsum Board & Painting";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 2;
+        expectedGeneralLabor = 3;
 
         conditions = new SpecialWeatherCondition[1];
         conditions[0] = SpecialWeatherCondition.VeryHot;
@@ -263,10 +401,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 7
-        expectedProgress = 40;
+        expectedProgress = 35.1f;
         activityOnThatDay = "Preparation of Gypsum Board & Painting";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 2;
+        expectedGeneralLabor = 2;
 
         conditions = new SpecialWeatherCondition[1];
         conditions[0] = SpecialWeatherCondition.VeryHot;
@@ -277,10 +415,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 8
-        expectedProgress = 45;
+        expectedProgress = 40.3f;
         activityOnThatDay = "Preparation of Gypsum Board & Painting";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 2;
+        expectedGeneralLabor = 2;
 
         conditions = new SpecialWeatherCondition[2];
         conditions[0] = SpecialWeatherCondition.VeryHot;
@@ -292,10 +430,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 9
-        expectedProgress = 50;
+        expectedProgress = 43.0f;
         activityOnThatDay = "Setting out for brick walls";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 1;
+        expectedGeneralLabor = 1;
 
         conditions = new SpecialWeatherCondition[1];
         conditions[0] = SpecialWeatherCondition.VeryHot;
@@ -306,10 +444,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 10
-        expectedProgress = 55;
+        expectedProgress = 52.5f;
         activityOnThatDay = "Setting out for brick walls, Concreting for concrete walls, Concrete curing";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 3;
+        expectedGeneralLabor = 4;
 
         conditions = new SpecialWeatherCondition[1];
         conditions[0] = SpecialWeatherCondition.VeryHot;
@@ -320,10 +458,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 11
-        expectedProgress = 60;
+        expectedProgress = 56.4f;
         activityOnThatDay = "Concrete curing, Remove formwork, Lifting and installation of concrete wall";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 1;
+        expectedGeneralLabor = 3;
 
         conditions = new SpecialWeatherCondition[2];
         conditions[0] = SpecialWeatherCondition.VeryHot;
@@ -335,10 +473,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 12
-        expectedProgress = 65;
+        expectedProgress = 62.0f;
         activityOnThatDay = "Lifting and installation of concrete wall, Remove formwork";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 2;
+        expectedGeneralLabor = 3;
 
         conditions = new SpecialWeatherCondition[1];
         conditions[0] = SpecialWeatherCondition.Rain;
@@ -349,10 +487,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 13
-        expectedProgress = 70;
+        expectedProgress = 67.7f;
         activityOnThatDay = "Lifting and installation of concrete wall, Remove formwork";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 2;
+        expectedGeneralLabor = 3;
 
         conditions = new SpecialWeatherCondition[1];
         conditions[0] = SpecialWeatherCondition.Rain;
@@ -363,10 +501,10 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 14
-        expectedProgress = 75;
+        expectedProgress = 75.3f;
         activityOnThatDay = "Lifting and installation of concrete wall, Window & door installation";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 3;
+        expectedGeneralLabor = 4;
 
         conditions = new SpecialWeatherCondition[2];
         conditions[0] = SpecialWeatherCondition.VeryHot;
@@ -378,9 +516,9 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 15
-        expectedProgress = 80;
+        expectedProgress = 85.7f;
         activityOnThatDay = "Lifting and installation of concrete wall, Window & door installation, Brick wall fixing";
-        expectedSkilledLabor = 5;
+        expectedSkilledLabor = 3;
         expectedGeneralLabor = 5;
 
         conditions = null;
@@ -391,9 +529,9 @@ public class ProgressManager : MonoBehaviour {
         #endregion
 
         #region day 16
-        expectedProgress = 85;
+        expectedProgress = 96.3f;
         activityOnThatDay = "Brick wall fixing";
-        expectedSkilledLabor = 5;
+        expectedSkilledLabor = 3;
         expectedGeneralLabor = 5;
 
         conditions = new SpecialWeatherCondition[1];
@@ -407,8 +545,8 @@ public class ProgressManager : MonoBehaviour {
         #region day 17
         expectedProgress = 100;
         activityOnThatDay = "Brick wall fixing";
-        expectedSkilledLabor = 5;
-        expectedGeneralLabor = 5;
+        expectedSkilledLabor = 1;
+        expectedGeneralLabor = 2;
 
         conditions = new SpecialWeatherCondition[1];
         conditions[0] = SpecialWeatherCondition.VeryHot;
@@ -598,5 +736,96 @@ public class ProgressManager : MonoBehaviour {
 
         days[29] = new Day(30, "Friday", expectedProgress, activityOnThatDay, expectedSkilledLabor, expectedGeneralLabor, weather);
         #endregion
+    }
+
+
+    public ModifierManager GetModifierManager() {
+        return  modifierManager;
+    }
+
+    public void Win() {
+        Time.timeScale = 0f;
+        hudCanvas.SetActive(false);
+        winCanvas.SetActive(true);
+        winText.text = GetWinReport();
+    }
+
+    public void Lose() {
+        Time.timeScale = 0f;
+        hudCanvas.SetActive(false);
+        loseCanvas.SetActive(true);
+        loseText.text = GetLoseReport();
+    }
+
+    public string GetWinReport() {
+        string str = "";
+        str += "The project was completed in <b>" + actualDay + " days</b>, which was ";
+        if (actualDay > 17) {
+            int dayDiff = actualDay - 17;
+            str += "<b>" + dayDiff + " days</b> later than expected.\n\n";
+        } else if (actualDay == 17) {
+            str += "<b>on time</b>.\n\n";
+        } else if (actualDay < 17) {
+            int dayDiff = 17 - actualDay;
+            str += "<b>" + dayDiff + " days</b> earlier than expected.\n\n";
+        }
+
+        str += "The <b>total labor cost</b> was: ";
+        float totalLaborCost = 0f;
+        float expectedTotalLaborCost = 0f;
+        for (int i = 0; i <= actualDay - 1; i++) {
+            totalLaborCost += days[i].actualCost;
+        }
+
+        for (int i = 0; i <= 16; i++) {
+            expectedTotalLaborCost += days[i].expectedLaborCost;
+        }
+
+        str += totalLaborCost + "HKD, ";
+
+        if (totalLaborCost > expectedTotalLaborCost) {
+            float costDiff = totalLaborCost - expectedTotalLaborCost;
+            str += "which was " + costDiff + "HKD <b>more</b> than expected (" + expectedTotalLaborCost + "HKD).\n\n";
+        } else if (totalLaborCost == expectedTotalLaborCost) {
+            str += "which was same as expected.\n\n";
+        } else if (totalLaborCost < expectedTotalLaborCost) {
+            float costDiff = expectedTotalLaborCost - totalLaborCost;
+            str += "which was " + costDiff + "HKD <b>less</b> than expected (" + expectedTotalLaborCost + "HKD).\n\n";
+        }
+
+        float incentive = 0f;
+        float incentivePerDay = 2000f;
+        if (actualDay < 17) {
+            incentive = (17 - actualDay) * incentivePerDay;
+            str += "You also got " + incentive + "HKD as incentive for early completion.\n\n";
+        } else if (actualDay > 17) {
+            incentive = (actualDay - 17) * 10000f;
+            str += "The liquidated damage for late completion is: " + incentive + "HKD.\n\n";
+        }
+
+        return str;
+    }
+
+    public string GetLoseReport() {
+        string str = "";
+        str += "The project was not completed in 30 days.\n\n";
+
+        str += "The <b>total labor cost</b> was already: ";
+        float totalLaborCost = 0f;
+        for (int i = 0; i <= actualDay - 1; i++) {
+            totalLaborCost += days[i].actualCost;
+        }
+        str += totalLaborCost + "HKD, ";
+
+        str += "but the progress is only " + days[actualDay - 1].actualProgress + "%.\n\n";
+
+        float incentive = 0f;
+        if (actualDay > 17) {
+            incentive = (actualDay - 17) * 10000f;
+            str += "And you've already got a liquidated damange of " + incentive + "HKD.\n\n";
+        }
+
+        str += "\nYou were finally fired by the company.\n\n";
+        return str;
     }
 }

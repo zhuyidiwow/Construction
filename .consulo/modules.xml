@@ -200,7 +200,6 @@
           <extension id="unity3d-child" />
           <extension id="unity3d-csharp-child" unsafe-code="false" language-version-module-name="" language-version-name="" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/ComponentInfo.cs" />
-          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/ProgressManager.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/BComponent.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/ComponentInfoManager.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/FlyThrough.cs" />
@@ -209,8 +208,11 @@
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/GameManager.cs.meta" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/GetterUtility.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/Day.cs" />
+          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/ModifierManager.cs" />
+          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/ProgressManager.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/SpecialWeather.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/SpecialWeatherCondition.cs" />
+          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/SwitchScene.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/Weather.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Prototype/P_AggregateBehavior.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Prototype/P_AggregateBehavior.cs.meta" />
@@ -228,7 +230,6 @@
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Prototype/P_UIValueField.cs.meta" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/UI/ButtonChangeDay.cs" />
           <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/UI/UIDayNumber.cs" />
-          <content url="file://$USER_HOME$/Desktop/Unity/Construction/Assets/Scripts/Progress/SwitchScene.cs" />
           <orderEntry type="sourceFolder" />
           <orderEntry type="module" module-name="Assembly-UnityScript-firstpass" />
           <orderEntry type="module" module-name="Assembly-CSharp-firstpass" />
