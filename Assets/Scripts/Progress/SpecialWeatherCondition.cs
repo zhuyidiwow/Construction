@@ -1,0 +1,1 @@
+public enum SpecialWeatherCondition {Thunderstorm, VeryHot, Rain};

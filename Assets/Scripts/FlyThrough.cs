@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.UI;
 
 public class FlyThrough : MonoBehaviour {
 
@@ -8,15 +8,37 @@ public class FlyThrough : MonoBehaviour {
     public float rotationX = 0.0f;
     public float rotationY = 0.0f;
 
-    void Update() {
+    public Text modeText;
 
+    void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        UpdateText();
+    }
+
+    void Update() {
+        // only rotate and move camera when cursor is locked
+        if (!Cursor.visible) {
+            RotateCamera();
+            MoveCamera();
+        }
+
+        // toggle lock cursor
+        if (Input.GetKeyDown(KeyCode.M)) {
+            ToggleLockCursor();
+        }
+    }
+
+    void RotateCamera() {
         // rotation
         rotationX += Input.GetAxis("Mouse X") * lookSpeed;
         rotationY += Input.GetAxis("Mouse Y") * lookSpeed;
         rotationY = Mathf.Clamp(rotationY, -90, 90);
         transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
         transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
+    }
 
+    void MoveCamera() {
         // horizontal movement
         transform.position += transform.forward * moveSpeed * Input.GetAxis("Vertical");
         transform.position += transform.right * moveSpeed * Input.GetAxis("Horizontal");
@@ -28,6 +50,25 @@ public class FlyThrough : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space)) {
             transform.position += Vector3.up * moveSpeed * 1f;
+        }
+    }
+
+    void ToggleLockCursor() {
+        if (Cursor.visible) {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        } else {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        UpdateText();
+    }
+
+    void UpdateText() {
+        if (Cursor.visible) {
+            modeText.text = "Select mode";
+        } else {
+            modeText.text = "Fly mode";
         }
     }
 }
