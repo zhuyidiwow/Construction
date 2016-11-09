@@ -59,7 +59,7 @@ public class SpecialWeather {
                         comments += "Very hot weather, ";
                     }
                     else if (i == conditions.Length - 1) {
-                        comments += "Very hot decreased productivity.\n";
+                        comments += "Very hot weather decreased productivity.\n";
                     }
                 }
                 if (conditions[i] == SpecialWeatherCondition.Rain) {

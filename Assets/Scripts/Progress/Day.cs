@@ -45,6 +45,9 @@ public class Day{
         if (actualLabor > expectedLabor) {
             if (actualLabor - expectedLabor > 2) {
                 modifierManager.motivationModifier -= (actualLabor - expectedLabor) * 0.02f;
+                if (modifierManager.motivationModifier <= 0.5f) {
+                    modifierManager.motivationModifier = 0.5f;
+                }
             }
         }
 
@@ -118,7 +121,7 @@ public class Day{
         if (actualLabor > expectedLabor) {
             if (actualLabor - expectedLabor > 2) {
                 // decrease productivity to base when too crowded
-                modifier = (float) expectedLabor / (float) actualLabor;
+                modifier = (float) expectedLabor / (float) actualLabor + 0.1f;
             }
         }
         return modifier;
@@ -176,7 +179,10 @@ public class Day{
         comments += GetSkillComment();
         comments += GetWeatherComment();
         if (comments == "\n<b>Comments:</b>\n") {
-            comments += "The project progressed normally.\n";
+            comments += "    The project progressed normally.\n";
+        }
+        if (actualProgress >= expectedProgress) {
+            comments += "    + You're ahead schedule! Good job!\n";
         }
         str += comments;
 
@@ -204,7 +210,7 @@ public class Day{
         if (actualLabor < expectedLabor) {
             comments += "    - Undermanning may delay project.\n";
             if (expectedLabor - actualLabor <= 2) {
-                comments += "    - Slight undermanning increased motivation.\n";
+                comments += "    + Slight undermanning increased motivation.\n";
             }
         }
 

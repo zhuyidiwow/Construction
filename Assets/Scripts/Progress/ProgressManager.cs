@@ -97,6 +97,7 @@ public class ProgressManager : MonoBehaviour {
         dayNumberText.SetActive(false);
         changeDayButton.SetActive(false);
         endDayButton.SetActive(false);
+        nextDayButton.SetActive(false);
 
         skilledLaborInput.SetActive(true);
         generalLaborInput.SetActive(true);

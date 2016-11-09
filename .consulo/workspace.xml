@@ -19,8 +19,8 @@
     <file path="/ComponentInfoManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478607219021" ignored="false" />
     <file path="/ComponentInfo.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478608667157" ignored="false" />
     <file path="/MyComponent.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478604978308" ignored="false" />
-    <file path="/Day.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478694754756" ignored="false" />
-    <file path="/ProgressManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478694090656" ignored="false" />
+    <file path="/Day.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478714983723" ignored="false" />
+    <file path="/ProgressManager.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478714870588" ignored="false" />
     <file path="/Weather.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478690654342" ignored="false" />
     <file path="/SpecialWeather.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478691529149" ignored="false" />
     <file path="/BComponent.cs" changelist="dfe1d667-23ce-44ae-a412-173e440bc9ee" time="1478614252764" ignored="false" />
@@ -53,8 +53,8 @@
       <file leaf-file-name="ProgressManager.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5899">
-              <caret line="779" column="39" selection-start-line="779" selection-start-column="39" selection-end-line="779" selection-end-column="39" />
+            <state relative-caret-position="272">
+              <caret line="162" column="32" selection-start-line="162" selection-start-column="32" selection-end-line="162" selection-end-column="32" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
                 <element signature="n#!!block;n#InitializeDays#0;n#ProgressManager#0" expanded="false" />
@@ -95,21 +95,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpecialWeather.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SpecialWeather.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
+            <state relative-caret-position="630">
               <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Day.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Day.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+            <state relative-caret-position="340">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,9 +186,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GetterUtility.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs" />
       </list>
     </option>
   </component>
@@ -240,6 +240,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -314,7 +315,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,11 +422,12 @@
       <workItem from="1478677233427" duration="6865000" />
       <workItem from="1478686101974" duration="7588000" />
       <workItem from="1478699164776" duration="130000" />
+      <workItem from="1478709319119" duration="2643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52563000" />
+    <option name="totallyTimeSpent" value="55206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -850,14 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Weather.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -876,29 +869,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5899">
-          <caret line="779" column="39" selection-start-line="779" selection-start-column="39" selection-end-line="779" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="n#!!block;n#InitializeDays#0;n#ProgressManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ModifierManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -923,6 +897,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/ProgressManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="162" column="32" selection-start-line="162" selection-start-column="32" selection-end-line="162" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="n#!!block;n#InitializeDays#0;n#ProgressManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/Day.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Progress/SpecialWeather.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
           <folding />
         </state>
       </provider>
